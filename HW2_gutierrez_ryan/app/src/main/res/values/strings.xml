@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">HW2_gutierrez_ryan</string>
+    <string name="button_linear_name">Start LinearLayout</string>
+    <string name="button_relative_name">Start RelativeLayout</string>
+    <string name="button_table_name">Start TableLayout</string>
+    <string name="empid">Employee ID</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="gender">Gender</string>
+    <string name="aCode">Access Code</string>
+    <string name="cCode">Confirm Code</string>
+    <string name="dept">Department</string>
+    <string name="agToTerm">Agree to Terms</string>
+    <string name="button_reset">Reset</string>
+    <string name="button_register">Register</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string-array name="empids">
+        <item>ABC123</item>
+        <item>XYZ456</item>
+        <item>123ABC</item>
+        <item>456XYZ</item>
+    </string-array>
+    <string name="title_activity_relative_layout">RelativeLayoutActivity</string>
+</resources>
