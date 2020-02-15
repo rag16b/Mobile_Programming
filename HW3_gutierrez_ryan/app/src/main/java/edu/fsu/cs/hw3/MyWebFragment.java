@@ -5,8 +5,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class MyWebFragment extends Fragment {
+
+    private WebView webView;
 
     public MyWebFragment() {}
 
@@ -15,6 +19,7 @@ public class MyWebFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         // TODO: Handle url if clicked in UrlListFragment
+
     }
 
     @Override
@@ -22,9 +27,11 @@ public class MyWebFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_web, container, false);
 
-        // TODO: Set up WebView
+        // Set up WebView
+        webView = (WebView) view.findViewById(R.id.WebView_webView);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("http://www.google.com");
 
         return view;
     }
-
 }

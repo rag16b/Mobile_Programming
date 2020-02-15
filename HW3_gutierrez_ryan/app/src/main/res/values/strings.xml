@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Homework3</string>
     <string name="sms_message"><![CDATA[ From : %1$s<br/>%2$s]]></string>
+    <string-array name="urlList">
+        <item>http://www.google.com</item>
+        <item>http://www.netflix.com</item>
+        <item>www.hulu.com</item>
+    </string-array>
 </resources>

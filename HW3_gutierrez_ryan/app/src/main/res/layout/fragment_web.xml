@@ -7,5 +7,10 @@
     tools:context="edu.fsu.cs.hw3.MyWebFragment">
 
     <!-- Add View to load URL when clicked in UrlListFragment -->
-
+    <WebView
+        android:id="@+id/WebView_webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:visibility="visible" />
 </FrameLayout>
