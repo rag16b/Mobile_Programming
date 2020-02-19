@@ -7,10 +7,12 @@ import android.content.Intent;
 import android.os.Build;
 import android.provider.Telephony;
 import android.telephony.SmsMessage;
+import android.widget.Toast;
 
 public class SmsReceiver extends BroadcastReceiver {
 
     public SmsReceiver(){}
+    String message;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -18,6 +20,8 @@ public class SmsReceiver extends BroadcastReceiver {
         // an SMS broadcast.
 
         // TODO: Extract url from sms and add to UrlListFragment
+        message = extractUrlFromIntent(intent);
+        //Toast.makeText(context, message, Toast.LENGTH_LONG).show();
     }
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
@@ -31,6 +35,5 @@ public class SmsReceiver extends BroadcastReceiver {
 
         return url;
     }
-
 }
 

@@ -30,8 +30,15 @@ public class MyWebFragment extends Fragment {
         // Set up WebView
         webView = (WebView) view.findViewById(R.id.WebView_webView);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://www.google.com");
 
         return view;
+    }
+
+    // public method called in MainActivity to send data here from the other fragment
+    public void updateUrl(String input) {
+        // if the string is missing http:// then append it
+        if (input.indexOf("http://") != 0)
+            input = "http://" + input;
+        webView.loadUrl(input);
     }
 }

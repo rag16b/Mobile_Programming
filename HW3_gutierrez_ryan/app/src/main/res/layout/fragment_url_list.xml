@@ -15,6 +15,5 @@
     <ListView
         android:id="@+id/ListView_urlList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:entries="@array/urlList" />
+        android:layout_height="match_parent" />
 </RelativeLayout>
