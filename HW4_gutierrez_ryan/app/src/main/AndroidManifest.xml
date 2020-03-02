@@ -3,6 +3,9 @@
     package="edu.fsu.cs.hw4">
 
     <!-- Setup permissions -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -23,11 +26,18 @@
             android:name="edu.fsu.cs.hw4.DownloadSongService"
             android:exported="false" />
 
-        <!-- MyMediaService plays song in MediaPlayer-->
+        <!-- MyMediaService plays song in MediaPlayer -->
         <service
             android:name="edu.fsu.cs.hw4.MyMediaService"
             android:enabled="true"
             android:exported="false" />
+
+        <!-- DownloadCompleteReceiver listens for when a download is complete -->
+        <receiver android:name="edu.fsu.cs.hw4.DownloadCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+            </intent-filter>
+        </receiver>
 
     </application>
 

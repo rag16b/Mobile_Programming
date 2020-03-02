@@ -33,6 +33,7 @@ public class DownloadDialog extends AppCompatDialogFragment {
             public void onClick(View v) {
                 String url = et_url.getText().toString();
                 listener.applyURL(url);
+                dismiss();
             }
         });
 
@@ -42,7 +43,6 @@ public class DownloadDialog extends AppCompatDialogFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
         listener = (DownloadDialogListener) context;
     }
 

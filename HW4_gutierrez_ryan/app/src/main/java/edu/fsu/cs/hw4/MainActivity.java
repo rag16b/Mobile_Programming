@@ -1,10 +1,14 @@
 package edu.fsu.cs.hw4;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 // Used this as reference for Overflow menu: https://www.youtube.com/watch?v=oh4YOj9VkVE
@@ -13,12 +17,20 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements DownloadDialog.DownloadDialogListener {
 
     private static final String TAG = MainActivity.class.getCanonicalName();
-    private String URL;
+    private ImageButton playPauseButton;
+    private ImageButton stopButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        playPauseButton = (ImageButton) findViewById(R.id.imageButton_playpause);
+        stopButton = (ImageButton) findViewById(R.id.imageButton_stop);
+
+        playPauseButton.setVisibility(View.GONE);
+        stopButton.setVisibility(View.GONE);
 
         // TODO setup UI
 
@@ -52,9 +64,16 @@ public class MainActivity extends AppCompatActivity implements DownloadDialog.Do
 
     @Override
     public void applyURL(String url) {
-        URL = url;
-        //Toast.makeText(this, URL, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, DownloadSongService.class);
+        intent.setAction("edu.fsu.cs.hw4.action.DOWNLOAD");
+        intent.putExtra("edu.fsu.cs.hw4.extra.URL", url);
+        startService(intent);
     }
+
+    /*public void setButtons(){
+        playPauseButton.setVisibility(View.VISIBLE);
+        stopButton.setVisibility(View.VISIBLE);
+    }*/
 
     // onClick method for Play button
     public void play(View v) {
