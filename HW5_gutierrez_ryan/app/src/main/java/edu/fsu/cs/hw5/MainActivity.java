@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity implements
         MainFragment.OnFragmentInteractionListener, LoginFragment.OnLoginFragmentInteractionListener,
@@ -36,12 +37,16 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onStartLogin() {
-        // TODO: Start LoginFragment
+        LoginFragment fragment = new LoginFragment();
+        String tag = LoginFragment.class.getCanonicalName();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_frame, fragment, tag).commit();
     }
 
     @Override
     public void onStartRegister() {
-        // TODO: Start RegisterFragment
+        RegisterFragment fragment = new RegisterFragment();
+        String tag = RegisterFragment.class.getCanonicalName();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_frame, fragment, tag).commit();
     }
 
 

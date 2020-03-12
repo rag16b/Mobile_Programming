@@ -20,8 +20,8 @@
         <!-- Fill in provider attributes -->
         <provider
             android:name=".MyContentProvider"
-            android:authorities=""
-            android:exported=""
+            android:authorities="edu.fsu.cs.hw5.MyContentProvider"
+            android:exported="false"
             android:readPermission=""
             android:writePermission=""
             />

@@ -17,28 +17,33 @@ public class MyContentProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         // TODO: Create Database
+        return true;
     }
 
     @Override
     public Uri insert(Uri uri, ContentValues values) {
         // TODO: insert Employee information
+        return null;
     }
 
     @Override
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
         // TODO: update Employee information
+        return 0;
     }
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
         // TODO: delete Employee information
+        return 0;
     }
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
         // TODO: query Employee by selection
+        return null;
     }
 
     @Override
