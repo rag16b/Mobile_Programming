@@ -52,7 +52,6 @@ public class RegisterFragment extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mRootView = inflater.inflate(R.layout.fragment_register, container, false);
-        // TODO: Setup UI
         empid = (EditText) mRootView.findViewById(R.id.editText_empid);
         name = (EditText) mRootView.findViewById(R.id.editText_name);
         email = (EditText) mRootView.findViewById(R.id.editText_email);
@@ -92,7 +91,7 @@ public class RegisterFragment extends Fragment{
         agToTerm.setChecked(false);
 
         // *** prints all elements in database for testing purposes
-        mCursor = getActivity().getContentResolver().query(MyContentProvider.CONTENT_URI,
+        /*mCursor = getActivity().getContentResolver().query(MyContentProvider.CONTENT_URI,
                 null, null, null, null);
         if (mCursor != null) {
             while (mCursor.moveToNext()) {
@@ -103,7 +102,7 @@ public class RegisterFragment extends Fragment{
                 Log.i("RegisterFragment", mCursor.getString(mCursor.getColumnIndex("AccessCode")));
                 Log.i("RegisterFragment", mCursor.getString(mCursor.getColumnIndex("Department")));
             }
-        }
+        }*/
     }
 
     public void onRegister(View v) {
@@ -180,6 +179,14 @@ public class RegisterFragment extends Fragment{
             mNewUri = getActivity().getContentResolver().insert(MyContentProvider.CONTENT_URI, mNewValues);
             mNewValues.clear();
         }
+
+        ViewEmployeeFragment fragment = new ViewEmployeeFragment();
+        String tag = RegisterFragment.class.getCanonicalName();
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_frame, fragment, tag)
+                .addToBackStack(null)
+                .commit();
     }
 
     @Override
@@ -202,5 +209,4 @@ public class RegisterFragment extends Fragment{
     public interface OnRegisterFragmentInteractionListener {
         void onSubmit(ContentValues values);
     }
-
 }

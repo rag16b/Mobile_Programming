@@ -60,11 +60,24 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public void onLoggedOut() {
-        // TODO: User logged out
+        MainFragment fragment = new MainFragment();
+        String tag = RegisterFragment.class.getCanonicalName();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_frame, fragment, tag)
+                .addToBackStack(null)
+                .commit();
     }
 
     @Override
     public void onUserDeleted(int res) {
-        // TODO: User account deleted
+        // DO SOMETHING WITH RES???
+        MainFragment fragment = new MainFragment();
+        String tag = RegisterFragment.class.getCanonicalName();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_frame, fragment, tag)
+                .addToBackStack(null)
+                .commit();
     }
 }
