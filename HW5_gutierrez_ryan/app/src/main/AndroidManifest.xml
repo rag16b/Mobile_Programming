@@ -3,6 +3,8 @@
     package="edu.fsu.cs.hw5">
 
     <!-- Do we need permissions? -->
+    <uses-permission android:name="edu.fsu.cs.hw5.permission.READ_PERMISSION"/>
+    <uses-permission android:name="edu.fsu.cs.hw5.permission.WRITE_PERMISSION"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,11 +21,11 @@
 
         <!-- Fill in provider attributes -->
         <provider
-            android:name=".MyContentProvider"
-            android:authorities="edu.fsu.cs.hw5.MyContentProvider"
-            android:exported="false"
-            android:readPermission=""
-            android:writePermission=""
+            android:name="edu.fsu.cs.hw5.MyContentProvider"
+            android:authorities="edu.fsu.cs.hw5.provider"
+            android:exported="true"
+            android:readPermission="edu.fsu.cs.hw5.permission.READ_PERMISSION"
+            android:writePermission="edu.fsu.cs.hw5.permission.WRITE_PERMISSION"
             />
 
     </application>

@@ -1,15 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="edu.fsu.cs.hw5.MainActivity">
+    android:layout_height="match_parent">
 
-    <!-- Add register form widgets -->
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="register" />
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RelativeLayoutActivity">
+
+        <TextView
+            android:id="@+id/textView_empid"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:gravity="center|right|center_horizontal"
+            android:text="@string/empid" />
+
+        <TextView
+            android:id="@+id/textView_name"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView_empid"
+            android:layout_marginTop="0dp"
+            android:gravity="right|center_vertical"
+            android:text="@string/name" />
+
+        <TextView
+            android:id="@+id/textView_email"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView_name"
+            android:layout_marginTop="0dp"
+            android:gravity="right|center_vertical"
+            android:text="@string/email" />
+
+        <TextView
+            android:id="@+id/textView_gender"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView_email"
+            android:layout_marginTop="0dp"
+            android:gravity="right|center_vertical"
+            android:text="@string/gender" />
+
+        <TextView
+            android:id="@+id/textView_aCode"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView_gender"
+            android:layout_marginTop="0dp"
+            android:gravity="center|right"
+            android:text="@string/aCode" />
+
+        <TextView
+            android:id="@+id/textView_cCode"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView_aCode"
+            android:layout_marginTop="0dp"
+            android:gravity="center|right"
+            android:text="@string/cCode" />
+
+        <TextView
+            android:id="@+id/textView_dept"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView_cCode"
+            android:layout_marginTop="0dp"
+            android:gravity="center|right"
+            android:text="@string/dept" />
+
+        <TextView
+            android:id="@+id/textView_agToTerm"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView_dept"
+            android:layout_marginTop="0dp"
+            android:gravity="center|right"
+            android:text="@string/agToTerm" />
+
+        <EditText
+            android:id="@+id/editText_empid"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/textView_empid"
+            android:layout_toRightOf="@+id/textView_empid"
+            android:ems="10"
+            android:inputType="text|textCapCharacters" />
+
+        <EditText
+            android:id="@+id/editText_name"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/editText_empid"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/textView_name"
+            android:layout_toRightOf="@+id/textView_name"
+            android:ems="10"
+            android:inputType="textPersonName|textCapWords" />
+
+        <EditText
+            android:id="@+id/editText_email"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/editText_name"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/textView_email"
+            android:layout_toRightOf="@+id/textView_email"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup_gender"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/editText_email"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/textView_gender"
+            android:layout_toRightOf="@+id/textView_gender"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton_male"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/male" />
+
+            <RadioButton
+                android:id="@+id/radioButton_female"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/female" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/editText_aCode"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/radioGroup_gender"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/textView_aCode"
+            android:layout_toRightOf="@+id/textView_aCode"
+            android:ems="10"
+            android:inputType="numberPassword" />
+
+        <EditText
+            android:id="@+id/editText_cCode"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/editText_aCode"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/textView_cCode"
+            android:layout_toRightOf="@+id/textView_cCode"
+            android:ems="10"
+            android:inputType="numberPassword" />
+
+        <Spinner
+            android:id="@+id/spinner_dept"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/editText_cCode"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/textView_dept"
+            android:layout_toRightOf="@+id/textView_dept"
+            android:entries="@array/spinnerItems"
+            android:spinnerMode="dropdown" />
+
+        <CheckBox
+            android:id="@+id/checkBox_agToTerm"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/spinner_dept"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/textView_agToTerm"
+            android:layout_toRightOf="@+id/textView_agToTerm" />
+
+        <Button
+            android:id="@+id/button_reset"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_agToTerm"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:onClick="onReset"
+            android:text="@string/button_reset"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/button_register"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkBox_agToTerm"
+            android:layout_marginStart="54dp"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:layout_toEndOf="@+id/button_reset"
+            android:layout_toRightOf="@+id/button_reset"
+            android:layout_weight="1"
+            android:onClick="onRegister"
+            android:text="@string/button_register"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+</ScrollView>

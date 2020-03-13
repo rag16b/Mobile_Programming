@@ -39,14 +39,22 @@ public class MainActivity extends AppCompatActivity implements
     public void onStartLogin() {
         LoginFragment fragment = new LoginFragment();
         String tag = LoginFragment.class.getCanonicalName();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_frame, fragment, tag).commit();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_frame, fragment, tag)
+                .addToBackStack(null)
+                .commit();
     }
 
     @Override
     public void onStartRegister() {
         RegisterFragment fragment = new RegisterFragment();
         String tag = RegisterFragment.class.getCanonicalName();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_frame, fragment, tag).commit();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_frame, fragment, tag)
+                .addToBackStack(null)
+                .commit();
     }
 
 
