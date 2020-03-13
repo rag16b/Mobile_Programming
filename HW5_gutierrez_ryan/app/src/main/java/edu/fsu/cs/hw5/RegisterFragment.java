@@ -178,15 +178,15 @@ public class RegisterFragment extends Fragment{
 
             mNewUri = getActivity().getContentResolver().insert(MyContentProvider.CONTENT_URI, mNewValues);
             mNewValues.clear();
-        }
 
-        ViewEmployeeFragment fragment = new ViewEmployeeFragment();
-        String tag = RegisterFragment.class.getCanonicalName();
-        getActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_frame, fragment, tag)
-                .addToBackStack(null)
-                .commit();
+            ViewEmployeeFragment fragment = new ViewEmployeeFragment();
+            String tag = RegisterFragment.class.getCanonicalName();
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_frame, fragment, tag)
+                    .addToBackStack(null)
+                    .commit();
+        }
     }
 
     @Override
